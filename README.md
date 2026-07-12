@@ -50,22 +50,22 @@ streamlit run app.py
 
 ## ⚠️ Accuracy Disclaimer
 
-The model shows ~99% accuracy on the test set — but that number comes with important context:
+The model achieves ~99% accuracy on the ISOT test set. A few things to keep in mind:
 
-- **Small dataset** — trained on only 1,680 labeled articles. Real-world fake news detectors use millions of samples
-- **Domain-specific** — dataset is mostly political and general English news. May misclassify sports, science, or entertainment articles
-- **Clean data bias** — training data was well-structured. Real-world news is messier
-- **No context awareness** — the model reads words, not meaning. A well-written fake article can fool it
-- **Not production-ready** — built as a university project and portfolio demo, not a tool for real fact-checking
-
-Use it as a demonstration of NLP and ML concepts, not as a reliable fact-checker.
+- **Domain-specific** — trained on political/world news (2016–2018). May struggle with sports, science, or entertainment articles
+- **Time-bound** — news patterns from 2016–2018 may differ from today's misinformation styles
+- **English only** — performs poorly on non-English text
+- **Not a fact-checker** — the model detects writing patterns, not actual facts. A well-written fake article can still fool it
+- Use for portfolio/demo purposes only
 
 ---
 
 ## Dataset
 
-- 1,680 labeled news articles (`fake` / `Real`)
-- Preprocessed: stopword removal, lemmatization, outlier filtering
+- **ISOT Fake News Dataset** — 44,898 labeled news articles
+- Source: University of Victoria, Canada
+- Two files: `True.csv` (real news) + `Fake.csv` (fake news)
+- Covers political and world news from 2016–2018
 - 80/20 train-test split with stratification
 
 ---
